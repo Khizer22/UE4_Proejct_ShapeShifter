@@ -26,6 +26,11 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
+	//Camera Spring
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
+		class USpringArmComponent *CameraBoom;
+	//Camera
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
+		class UCameraComponent *FollowCamera;
 	
 };

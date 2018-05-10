@@ -13,8 +13,8 @@ UCLASS()
 class PROEJCT_SHAPESHIFTER_API AShapeShifterGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-	
-	
+
+		AShapeShifterGameMode();
 	
 	
 };

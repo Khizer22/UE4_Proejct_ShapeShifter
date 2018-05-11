@@ -6,6 +6,14 @@
 #include "GameFramework/Character.h"
 #include "MainCharacter.generated.h"
 
+UENUM(BlueprintType)		
+enum class EShapeType : uint8
+{
+	//Shape types
+	CUBE 	UMETA(DisplayName = "Cube"),
+	SPHERE 	UMETA(DisplayName = "Sphere"),
+};
+
 UCLASS()
 class PROEJCT_SHAPESHIFTER_API AMainCharacter : public ACharacter
 {
@@ -19,6 +27,20 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	//Shapes
+	UFUNCTION()
+		void ChangeShapeNext();
+	UFUNCTION()
+		void ChangeShapePrevious();
+	//Current Shape
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		EShapeType myShape = EShapeType::CUBE;
+
+	//TEMPORARY PROTOTYPE MESHES
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		TArray<UStaticMesh*> PlayerMeshBrush;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class UStaticMeshComponent* PlayerMeshComponent;
 private:
 
 	//Inputs
